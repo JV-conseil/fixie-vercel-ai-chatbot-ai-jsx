@@ -94,12 +94,12 @@ variables.
 You can generate a random secret at <https://generate-secret.vercel.app/128>
 or `openssl rand -base64 32`
 
-### OpenAI API Key
+### Hugging Face API Key
 
-Retrieve your OpenAI API Key at <https://platform.openai.com/api-keys>.
+Retrieve your Hugging Face API Key at <https://huggingface.co/settings/tokens>.
 
 ```bash
-OPENAI_API_KEY=<YOUR KEY HERE>
+HUGGINGFACE_API_KEY=<YOUR KEY HERE>
 ```
 
 ### Fixie API Token
