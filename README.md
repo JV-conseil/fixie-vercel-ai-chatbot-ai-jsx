@@ -46,12 +46,13 @@ Follow the steps outlined in the [quick start guide](https://vercel.com/docs/sto
 
 Remember to update your environment variables (`KV_URL`, `KV_REST_API_URL`, `KV_REST_API_TOKEN`, `KV_REST_API_READ_ONLY_TOKEN`) in the `.env` file with the appropriate credentials provided during the KV database setup.
 
-
 ## Running locally
 
 You will need to use the environment variables [defined in `.env.example`](.env.example) to run Next.js AI Chatbot. It's recommended you use [Vercel Environment Variables](https://vercel.com/docs/concepts/projects/environment-variables) for this, but a `.env` file is all that is necessary.
 
 > Note: You should not commit your `.env` file or it will expose secrets that will allow others to control access to your various OpenAI and authentication provider accounts.
+
+<!--
 
 1. Install Vercel CLI: `npm i -g vercel`
 2. Link local instance with Vercel and GitHub accounts (creates `.vercel` directory): `vercel link`
@@ -62,7 +63,52 @@ pnpm install
 pnpm dev
 ```
 
+-->
+
 Your app template should now be running on [localhost:3000](http://localhost:3000/).
+
+### Homebrew install
+
+Alternative install to `npm -i g` 👇
+
+```bash
+brew install pnpm vercel-cli
+```
+
+### Vercel
+
+When you created your KV database, your `KV_REST_API_URL` and `KV_REST_API_TOKEN` were created as Environment Variables automatically.
+
+To use these Environment Variables in your code, we recommend pulling them with the following Vercel CLI command:
+
+```bash
+vercel env pull .env.development.local
+```
+
+### Generate a secret
+
+Auth.js requires a secret to be set. If you are using a framework like Next.js, we try
+to automatically infer the secret from the AUTH_SECRET, AUTH_SECRET_1, etc. environment
+variables.
+
+You can generate a random secret at <https://generate-secret.vercel.app/128>
+or `openssl rand -base64 32`
+
+### OpenAI API Key
+
+Retrieve your OpenAI API Key at <https://platform.openai.com/api-keys>.
+
+```bash
+OPENAI_API_KEY=<YOUR KEY HERE>
+```
+
+### Fixie API Token
+
+Retrieve your Fixie API token at <https://app.fixie.ai/profile>.
+
+```bash
+FIXIE_API_KEY=<YOUR KEY HERE>
+```
 
 ## Authors
 
