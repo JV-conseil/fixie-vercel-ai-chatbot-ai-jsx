@@ -29,7 +29,7 @@
     "@vercel/og": "^0.5.20",
     "ai": "^2.2.35",
     "ai-jsx": "^0.5.16",
-    "class-variance-authority": "^0.4.0",
+    "class-variance-authority": "^0.7.0",
     "clsx": "^1.2.1",
     "focus-trap-react": "^10.2.3",
     "nanoid": "^4.0.2",
